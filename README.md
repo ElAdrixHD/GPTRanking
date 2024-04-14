@@ -18,6 +18,6 @@
 
 # TODO CHANGES:
 
-[] Use streams instead futures to get the information from backend
-[] Improve the UI/UX
-[] Improve gptProvider
+- [ ] Use streams instead futures to get the information from backend
+- [ ] Improve the UI/UX
+- [ ] Improve gptProvider
