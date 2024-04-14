@@ -3,44 +3,21 @@ import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:meta/meta.dart';
 
-/// Abstraction of dio library to Api REST implementations
 class DioRestService {
-  /// Use [baseUrl] to config a base url of api, like `https://api.mrmilu.com`
   final String baseUrl;
 
-  /// Use optional [interceptors] to configure a interceptors list
   final List<Interceptor> interceptors;
 
-  /// Optional [catchErrors] to get DioError. This is useful when need
-  /// transform a DioError to custom error.
   final void Function(DioException)? catchErrors;
 
-  /// Receive timeout in milliseconds
-  ///
-  /// By default `15` seconds
   final int receiveTimeout;
 
-  /// Connect timeout in milliseconds
-  ///
-  /// By default `15` seconds
   final int connectTimeout;
 
-  /// Send timeout in milliseconds
-  ///
-  /// By default `15` seconds
   final int sendTimeout;
 
-  /// Valid codes to requests
-  /// If some code is outside this list, the request will be throw a DioError
-  ///
-  /// By default `[200]`
   final List<int> validCodes;
 
-  /// Http request headers. The keys of initial headers will be converted to lowercase,
-  /// for example 'Content-Type' will be converted to 'content-type'.
-
-  /// The key of Header Map is case-insensitive,
-  /// eg: content-type and Content-Type are regard as the same key.
   final Map<String, dynamic>? headers;
 
   @internal
